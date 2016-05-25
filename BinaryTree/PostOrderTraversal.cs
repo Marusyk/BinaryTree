@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    class PostOrderTraversal
+    public class PostOrderTraversal : TraversalStrategy
     {
+        public override IEnumerator<T> Traversal<T>(BinaryTreeNode<T> head)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
