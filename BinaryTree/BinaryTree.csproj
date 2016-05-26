@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="BinaryTree.cs" />
     <Compile Include="BinaryTreeNode.cs" />
-    <Compile Include="IBinaryTree.cs" />
     <Compile Include="InOrderTraversal.cs" />
     <Compile Include="PostOrderTraversal.cs" />
     <Compile Include="PreOrderTraversal.cs" />

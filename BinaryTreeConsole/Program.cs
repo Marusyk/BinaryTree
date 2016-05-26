@@ -28,6 +28,7 @@ namespace BinaryTreeConsole
 
             Console.WriteLine("Count : {0}", binaryTree.Count);
 
+            Console.Write("Values: ");
             foreach (var item in binaryTree)
             {
                 Console.Write(item + " ");
@@ -35,8 +36,32 @@ namespace BinaryTreeConsole
 
             binaryTree.Remove(7);
 
-            Console.WriteLine();
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Count after remove: {0}", binaryTree.Count);
+
+            Console.Write("Values: ");
+            foreach (var item in binaryTree)
+            {
+                Console.Write(item + " ");
+            }
+
+
+            var arr = new int[binaryTree.Count];
+            binaryTree.CopyTo(arr, 0);
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Copy to array: ");
+
+            foreach (var item in arr)
+            {
+                Console.Write(item + " ");
+            }
+
+            binaryTree.Clear();
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Count after clear: {0}", binaryTree.Count);
+            Console.Write("Values after clar: ");
 
             foreach (var item in binaryTree)
             {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public class BinaryTree<T> : IBinaryTree<T> where T : IComparable<T>
+    public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
         #region private fields
 
@@ -100,6 +100,8 @@ namespace BinaryTree
 
         public int Count { get; private set; }
 
+        public bool IsReadOnly => false;
+
         public bool Contains(T value)
         {
             BinaryTreeNode<T> parent;
@@ -194,6 +196,21 @@ namespace BinaryTree
                 }
             }
             return true;
+        }
+
+        public void Clear()
+        {
+            _head = null;
+            Count = 0;
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            var items = _traversalStrategy.Traversal(_head);
+            while(items.MoveNext())
+            {
+                array[arrayIndex++] = items.Current;
+            }
         }
 
         #endregion
