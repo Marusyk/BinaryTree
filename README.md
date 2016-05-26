@@ -28,10 +28,11 @@ binaryTree.Add(5);
 binaryTree.Add(12)
 ```
 or use collection initializer like : `var binaryTree = new BinaryTree<int>() { 8, 5, 12, 3, 7, 10, 15 };`
-<br>
+
+
 By default traversal is set to **In-order** <br>
-Yoi can set traversal in consructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal());`
-or use method `SetTraversalStrategy()`
+You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal());`
+or use method `SetTraversalStrategy()`:
 ```
 var inOrder = new InOrderTraversal();
 var preOrder = new PreOrderTraversal();
@@ -40,19 +41,19 @@ var postOrder = new PostOrderTraversal();
 binaryTree.SetTraversalStrategy(preOrder);
 ```
 
-Available opeations:
+Available operations:
 
- - `void Add(T value)` - add a new element to the tree
- - `int Count` - return count of elements in tree
+ - `void Add(T value)` - adds a new element to the tree
+ - `int Count` - returns count of elements in tree
  - `bool IsReadOnly` - always return `false`
- - `bool Contains(T value)` - check if element contains in the tree
- - `bool Remove(T value)` - remove element from the tree. Return `true` if element was removed.
- - `void Clear()` - clear tree
+ - `bool Contains(T value)` - checks if the tree contains the element 
+ - `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
+ - `void Clear()` - clears tree
  - `void CopyTo(T[] array, int arrayIndex)` - copies all the elements of the tree to the specified one-dimensional array starting at the specified destination array index. 
- - `void SetTraversalStrategy(TraversalStrategy traversalStrategy)` - set stratefy of traversal(Pre-order, In-order, Post-order)
- - `IEnumerator<T> GetEnumerator()` - return numerator of tree
+ - `void SetTraversalStrategy(TraversalStrategy traversalStrategy)` - sets type of traversal(Pre-order, In-order, Post-order)
+ - `IEnumerator<T> GetEnumerator()` - returns numerator of tree
 
-To display all elements of tree use:
+To display all elements of tree, use:
 ```
 foreach (var item in binaryTree)
 {
