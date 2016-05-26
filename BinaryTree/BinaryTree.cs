@@ -8,7 +8,7 @@ namespace BinaryTree
     {
         #region private fields
 
-        private readonly TraversalStrategy _traversalStrategy;
+        private TraversalStrategy _traversalStrategy;
         private BinaryTreeNode<T> _head;
 
         #endregion
@@ -17,7 +17,7 @@ namespace BinaryTree
 
         public BinaryTree(TraversalStrategy traversalStrategy)
         {
-            _traversalStrategy = traversalStrategy;
+            SetTraversalStrategy(traversalStrategy);
         }
 
         public BinaryTree()
@@ -211,6 +211,11 @@ namespace BinaryTree
             {
                 array[arrayIndex++] = items.Current;
             }
+        }
+
+        public void SetTraversalStrategy(TraversalStrategy traversalStrategy)
+        {
+            _traversalStrategy = traversalStrategy;
         }
 
         #endregion

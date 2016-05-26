@@ -4,39 +4,22 @@ namespace BinaryTree
 {
     public class InOrderTraversal : TraversalStrategy
     {
-        public override IEnumerator<T> Traversal<T>(BinaryTreeNode<T> head)
+        public override IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node)
         {
-            if (head == null)
-                yield break;
-
             var stack = new Stack<BinaryTreeNode<T>>();
-            var current = head;
-            var goLeftNext = true;
-
-            stack.Push(current);
-
-            while (stack.Count > 0)
+            
+            while (stack.Count > 0 || node != null)
             {
-                if (goLeftNext)
+                if (node != null)
                 {
-                    while (current.Left != null)
-                    {
-                        stack.Push(current);
-                        current = current.Left;
-                    }
-                }
-
-                yield return current.Value;
-
-                if (current.Right != null)
-                {
-                    current = current.Right;
-                    goLeftNext = true;
+                    stack.Push(node);
+                    node = node.Left;
                 }
                 else
                 {
-                    current = stack.Pop();
-                    goLeftNext = false;
+                    node = stack.Pop();
+                    yield return node.Value;
+                    node = node.Right;
                 }
             }
         }

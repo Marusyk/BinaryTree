@@ -5,6 +5,6 @@ namespace BinaryTree
 {
     public abstract class TraversalStrategy
     {
-        public abstract IEnumerator<T> Traversal<T>(BinaryTreeNode<T> head) where T : IComparable<T>;
+        public abstract IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>;
     }
 }

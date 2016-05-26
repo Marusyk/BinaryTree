@@ -7,44 +7,51 @@ namespace BinaryTreeConsole
     {
         private static void Main(string[] args)
         {
-            /* 
-            var binaryTree = new BinaryTree<int>();
+            var binaryTree = new BinaryTree<int>() { 8, 5, 12, 3, 7, 10, 15 };
 
-            binaryTree.Add(8);
-            binaryTree.Add(5);
-            binaryTree.Add(12);
-            binaryTree.Add(3);
-            binaryTree.Add(7);
-            binaryTree.Add(10);
-            binaryTree.Add(15);
-            */
+            var inOrder = new InOrderTraversal();
+            var preOrder = new PreOrderTraversal();
+            var postOrder = new PostOrderTraversal();
 
-            /*
-            var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-            */
-
-            TraversalStrategy traversalStrategy = new InOrderTraversal();
-            var binaryTree = new BinaryTree<int>(traversalStrategy) { 8, 5, 12, 3, 7, 10, 15 };
-
-            Console.WriteLine("Count : {0}", binaryTree.Count);
-
-            Console.Write("Values: ");
+            Console.Write("Pre-order : ");
+            binaryTree.SetTraversalStrategy(preOrder);
             foreach (var item in binaryTree)
             {
                 Console.Write(item + " ");
             }
-
-            binaryTree.Remove(7);
 
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("Count after remove: {0}", binaryTree.Count);
-
-            Console.Write("Values: ");
+            Console.Write("Post-order : ");
+            binaryTree.SetTraversalStrategy(postOrder);
             foreach (var item in binaryTree)
             {
                 Console.Write(item + " ");
             }
 
+            Console.WriteLine(Environment.NewLine);
+            Console.Write("In-order : ");
+            binaryTree.SetTraversalStrategy(inOrder);
+            foreach (var item in binaryTree)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Count : {0}", binaryTree.Count);
+
+            const int remove = 10;
+            var result = binaryTree.Remove(remove);
+            if (result)
+            {
+                Console.WriteLine(Environment.NewLine);
+                Console.WriteLine("Node {0} was removed, count after remove : {1}", remove, binaryTree.Count);
+
+                Console.Write("Values: ");
+                foreach (var item in binaryTree)
+                {
+                    Console.Write(item + " ");
+                }
+            }
 
             var arr = new int[binaryTree.Count];
             binaryTree.CopyTo(arr, 0);
