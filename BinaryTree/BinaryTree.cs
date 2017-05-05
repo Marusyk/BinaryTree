@@ -6,14 +6,8 @@ namespace BinaryTree
 {
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
-        #region private fields
-
         private TraversalStrategy _traversalStrategy;
         private BinaryTreeNode<T> _head;
-
-        #endregion
-
-        #region public constructors
 
         public BinaryTree(TraversalStrategy traversalStrategy)
         {
@@ -25,65 +19,9 @@ namespace BinaryTree
             _traversalStrategy = new InOrderTraversal();
         }
 
-        #endregion
+        public int Count { get; private set; }
 
-        #region private methods
-
-        private static void AddTo(BinaryTreeNode<T> node, T value)
-        {
-            if (value.CompareTo(node.Value) < 0)
-            {
-                if (node.Left == null)
-                {
-                    node.Left = new BinaryTreeNode<T>(value);
-                }
-                else
-                {
-                    AddTo(node.Left, value);
-                }
-            }
-            else
-            {
-                if (node.Right == null)
-                {
-                    node.Right = new BinaryTreeNode<T>(value);
-                }
-                else
-                {
-                    AddTo(node.Right, value);
-                }
-            }
-        }
-
-        private BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent)
-        {
-            var current = _head;
-            parent = null;
-
-            while (current != null)
-            {
-                var result = current.CompareTo(value);
-                if (result > 0)
-                {
-                    parent = current;
-                    current = current.Left;
-                }
-                else if (result < 0)
-                {
-                    parent = current;
-                    current = current.Right;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            return current;
-        }
-
-        #endregion
-
-        #region public 
+        public bool IsReadOnly => false;
 
         public void Add(T value)
         {
@@ -97,10 +35,6 @@ namespace BinaryTree
             }
             Count++;
         }
-
-        public int Count { get; private set; }
-
-        public bool IsReadOnly => false;
 
         public bool Contains(T value)
         {
@@ -218,9 +152,57 @@ namespace BinaryTree
             _traversalStrategy = traversalStrategy;
         }
 
-        #endregion
+        private static void AddTo(BinaryTreeNode<T> node, T value)
+        {
+            if (value.CompareTo(node.Value) < 0)
+            {
+                if (node.Left == null)
+                {
+                    node.Left = new BinaryTreeNode<T>(value);
+                }
+                else
+                {
+                    AddTo(node.Left, value);
+                }
+            }
+            else
+            {
+                if (node.Right == null)
+                {
+                    node.Right = new BinaryTreeNode<T>(value);
+                }
+                else
+                {
+                    AddTo(node.Right, value);
+                }
+            }
+        }
 
-        #region IEnumerable implementation
+        private BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent)
+        {
+            var current = _head;
+            parent = null;
+
+            while (current != null)
+            {
+                var result = current.CompareTo(value);
+                if (result > 0)
+                {
+                    parent = current;
+                    current = current.Left;
+                }
+                else if (result < 0)
+                {
+                    parent = current;
+                    current = current.Right;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return current;
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -231,6 +213,5 @@ namespace BinaryTree
         {
             return GetEnumerator();
         } 
-        #endregion
     }
 }

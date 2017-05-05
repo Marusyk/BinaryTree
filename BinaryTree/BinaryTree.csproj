@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTree.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="BinaryTreeNode.cs" />
     <Compile Include="InOrderTraversal.cs" />
     <Compile Include="PostOrderTraversal.cs" />

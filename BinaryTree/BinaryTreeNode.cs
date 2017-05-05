@@ -13,20 +13,16 @@ namespace BinaryTree
 
         public BinaryTreeNode<TNode> Right { get; set; }
 
-        public TNode Value { get; private set; }
+        public TNode Value { get; }
 
         public int CompareNode(BinaryTreeNode<TNode> node)
         {
             return Value.CompareTo(node.Value);
         }
 
-        #region IComparable
-
         public int CompareTo(TNode node)
         {
             return Value.CompareTo(node);
         }
-
-        #endregion
     }
 }
