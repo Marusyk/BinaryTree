@@ -7,5 +7,6 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>BinaryTree</RootNamespace>
+    <Version>3.0.0</Version>
   </PropertyGroup>
 </Project>
