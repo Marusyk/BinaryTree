@@ -15,7 +15,7 @@ You can directly install this library from [Nuget][6]. There are two packages:
 
     PM> Install-Package BinaryTree
 [6]: http://nuget.org
-[7]: https://www.nuget.org/packages/BinaryTree/1.0.0
+[7]: https://www.nuget.org/packages/BinaryTree/3.0.0
 
 # How to use
 
