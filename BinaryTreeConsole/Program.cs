@@ -9,9 +9,9 @@ namespace BinaryTreeConsole
         {
             var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
 
-            var inOrder = new InOrderTraversal();
-            var preOrder = new PreOrderTraversal();
-            var postOrder = new PostOrderTraversal();
+            var inOrder = new InOrderTraversal<int>();
+            var preOrder = new PreOrderTraversal<int>();
+            var postOrder = new PostOrderTraversal<int>();
 
             Console.Write("Pre-order : ");
             binaryTree.SetTraversalStrategy(preOrder);

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public interface ITraversalStrategy
+    public interface ITraversalStrategy<T> where T : IComparable<T>
     {
-        IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>;
+        IEnumerator<T> Traversal(BinaryTreeNode<T> node);
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public class InOrderTraversal : ITraversalStrategy
+    public class InOrderTraversal<T> : ITraversalStrategy<T> where T : IComparable<T>
     {
-        public IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>
+        public IEnumerator<T> Traversal(BinaryTreeNode<T> node)
         {
             var stack = new Stack<BinaryTreeNode<T>>();
 

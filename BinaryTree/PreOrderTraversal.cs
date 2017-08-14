@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public class PreOrderTraversal : ITraversalStrategy
+    public class PreOrderTraversal<T> : ITraversalStrategy<T> where T : IComparable<T>
     {
-        public IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>
+        public IEnumerator<T> Traversal(BinaryTreeNode<T> node)
         {
             if (node == null)
                 yield break;

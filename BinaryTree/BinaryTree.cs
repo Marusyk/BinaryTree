@@ -6,17 +6,17 @@ namespace BinaryTree
 {
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
-        private ITraversalStrategy _traversalStrategy;
+        private ITraversalStrategy<T> _traversalStrategy;
         private BinaryTreeNode<T> _head;
 
-        public BinaryTree(ITraversalStrategy traversalStrategy)
+        public BinaryTree(ITraversalStrategy<T> traversalStrategy)
         {
             SetTraversalStrategy(traversalStrategy);
         }
 
         public BinaryTree()
         {
-            _traversalStrategy = new InOrderTraversal();
+            _traversalStrategy = new InOrderTraversal<T>();
         }
 
         public int Count { get; private set; }
@@ -85,7 +85,7 @@ namespace BinaryTree
                 else
                 {
                     var result = parent.CompareTo(current.Value);
-                    if(result > 0)
+                    if (result > 0)
                     {
                         parent.Left = current.Right;
                     }
@@ -123,7 +123,7 @@ namespace BinaryTree
                     {
                         parent.Left = leftMost;
                     }
-                    else if(result < 0)
+                    else if (result < 0)
                     {
                         parent.Right = leftMost;
                     }
@@ -141,13 +141,13 @@ namespace BinaryTree
         public void CopyTo(T[] array, int arrayIndex)
         {
             var items = _traversalStrategy.Traversal(_head);
-            while(items.MoveNext())
+            while (items.MoveNext())
             {
                 array[arrayIndex++] = items.Current;
             }
         }
 
-        public void SetTraversalStrategy(ITraversalStrategy traversalStrategy)
+        public void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)
         {
             _traversalStrategy = traversalStrategy;
         }
@@ -212,6 +212,6 @@ namespace BinaryTree
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        } 
+        }
     }
 }
