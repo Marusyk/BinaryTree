@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public class PostOrderTraversal : TraversalStrategy
+    public class PostOrderTraversal : ITraversalStrategy
     {
-        public override IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node)
+        public IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>
         {
             var stack = new Stack<BinaryTreeNode<T>>();
             BinaryTreeNode<T> lastNodeVisited = null;

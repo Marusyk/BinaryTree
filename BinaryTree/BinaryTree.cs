@@ -6,10 +6,10 @@ namespace BinaryTree
 {
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
-        private TraversalStrategy _traversalStrategy;
+        private ITraversalStrategy _traversalStrategy;
         private BinaryTreeNode<T> _head;
 
-        public BinaryTree(TraversalStrategy traversalStrategy)
+        public BinaryTree(ITraversalStrategy traversalStrategy)
         {
             SetTraversalStrategy(traversalStrategy);
         }
@@ -147,7 +147,7 @@ namespace BinaryTree
             }
         }
 
-        public void SetTraversalStrategy(TraversalStrategy traversalStrategy)
+        public void SetTraversalStrategy(ITraversalStrategy traversalStrategy)
         {
             _traversalStrategy = traversalStrategy;
         }

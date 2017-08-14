@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BinaryTree
 {
-    public class PreOrderTraversal : TraversalStrategy
+    public class PreOrderTraversal : ITraversalStrategy
     {
-        public override IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node)
+        public IEnumerator<T> Traversal<T>(BinaryTreeNode<T> node) where T : IComparable<T>
         {
             if (node == null)
                 yield break;
