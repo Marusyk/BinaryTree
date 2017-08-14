@@ -31,12 +31,12 @@ or use collection initializer like : `var binaryTree = new BinaryTree<int>() { 8
 
 
 By default traversal is set to **In-order** <br>
-You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal());`
+You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
 or use method `SetTraversalStrategy()`:
 ```
-var inOrder = new InOrderTraversal();
-var preOrder = new PreOrderTraversal();
-var postOrder = new PostOrderTraversal();
+var inOrder = new InOrderTraversal<int>();
+var preOrder = new PreOrderTraversal<int>();
+var postOrder = new PostOrderTraversal<int>();
 
 binaryTree.SetTraversalStrategy(preOrder);
 ```
@@ -50,7 +50,7 @@ Available operations:
  - `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
  - `void Clear()` - clears tree
  - `void CopyTo(T[] array, int arrayIndex)` - copies all the elements of the tree to the specified one-dimensional array starting at the specified destination array index. 
- - `void SetTraversalStrategy(TraversalStrategy traversalStrategy)` - sets type of traversal(Pre-order, In-order, Post-order)
+ - `void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)` - sets type of traversal(Pre-order, In-order, Post-order)
  - `IEnumerator<T> GetEnumerator()` - returns numerator of tree
 
 To display all elements of tree, use:
