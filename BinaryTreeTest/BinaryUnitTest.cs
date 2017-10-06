@@ -1,7 +1,6 @@
 using System.Linq;
 using BinaryTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace BinaryTreeTest
 {
@@ -24,31 +23,27 @@ namespace BinaryTreeTest
         [TestMethod]
         public void TestPreOrderTraversal()
         {
-            {
-                // arrange
-                var expected = new int[] { 8, 5, 3, 7, 12, 10, 15 };
-                var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-                var preOrder = new PreOrderTraversal<int>();
-                // act
-                binaryTree.SetTraversalStrategy(preOrder);
-                // assert
-                Assert.IsTrue(expected.SequenceEqual(binaryTree));
-            }
+            // arrange
+            var expected = new int[] { 8, 5, 3, 7, 12, 10, 15 };
+            var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
+            var preOrder = new PreOrderTraversal<int>();
+            // act
+            binaryTree.SetTraversalStrategy(preOrder);
+            // assert
+            Assert.IsTrue(expected.SequenceEqual(binaryTree));
         }
 
         [TestMethod]
         public void TestPostOrderTraversal()
         {
-            {
-                // arrange
-                var expected = new int[] { 3, 7, 5, 10, 15, 12, 8 };
-                var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-                var postOrder = new PostOrderTraversal<int>();
-                // act
-                binaryTree.SetTraversalStrategy(postOrder);
-                // assert
-                Assert.IsTrue(expected.SequenceEqual(binaryTree));
-            }
+            // arrange
+            var expected = new int[] { 3, 7, 5, 10, 15, 12, 8 };
+            var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
+            var postOrder = new PostOrderTraversal<int>();
+            // act
+            binaryTree.SetTraversalStrategy(postOrder);
+            // assert
+            Assert.IsTrue(expected.SequenceEqual(binaryTree));
         }
 
         [TestMethod]
