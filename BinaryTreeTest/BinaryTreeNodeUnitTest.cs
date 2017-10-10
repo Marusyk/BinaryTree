@@ -1,4 +1,3 @@
-using System.Linq;
 using BinaryTree;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -10,36 +9,42 @@ namespace BinaryTreeTest
         [TestMethod]
         public void TestNodeCompareShouldBeEqual()
         {
-            // arrange
+            // Arrange
             var nodeOrigin = new BinaryTreeNode<int>(1);
             var nodeToCompare = new BinaryTreeNode<int>(1);
-            // act
+
+            // Act
             var isEqual = nodeOrigin.CompareNode(nodeToCompare);
-            // assert
+
+            // Assert
             Assert.AreEqual(0, isEqual);
         }
 
         [TestMethod]
         public void TestNodeCompareShouldBeHigher()
         {
-            // arrange
+            // Arrange
             var nodeOrigin = new BinaryTreeNode<int>(2);
             var nodeToCompare = new BinaryTreeNode<int>(1);
-            // act
+
+            // Act
             var isHigher = nodeOrigin.CompareNode(nodeToCompare);
-            // assert
+
+            // Assert
             Assert.AreEqual(1, isHigher);
         }
 
         [TestMethod]
         public void TestNodeCompareShouldBeLower()
         {
-            // arrange
+            // Arrange
             var nodeOrigin = new BinaryTreeNode<int>(1);
             var nodeToCompare = new BinaryTreeNode<int>(2);
-            // act
+
+            // Act
             var isLower = nodeOrigin.CompareNode(nodeToCompare);
-            // assert
+
+            // Assert
             Assert.AreEqual(-1, isLower);
         }
     }

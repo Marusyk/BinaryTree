@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>net46;netstandard2.0;netcoreapp2.0</TargetFrameworks>
     <AssemblyName>BinaryTree</AssemblyName>
     <PackageId>BinaryTree</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -20,7 +20,8 @@ Supporting .Net Core 2.0
 v3.0.0 
 Supporting .Net Core 1.1
 v2.0.0 
-Implemented types of traversal strategy.</PackageReleaseNotes>
+Implemented types of traversal strategy.
+    </PackageReleaseNotes>
     <AssemblyVersion>4.0.0.1</AssemblyVersion>
     <FileVersion>4.0.0.1</FileVersion>
   </PropertyGroup>
