@@ -109,5 +109,20 @@ namespace BinaryTreeTest
             Assert.IsFalse(isRemoved);
             Assert.AreEqual(initialCount, binaryTree.Count);
         }
+
+        [TestMethod]
+        public void TestBinaryTree_Contains()
+        {
+            // Arrange
+            var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
+
+            // Act
+            var exists = binaryTree.Contains(10);
+            var doesntExist = binaryTree.Contains(20);
+
+            // Assert
+            Assert.IsTrue(exists);
+            Assert.IsFalse(doesntExist);
+        }
     }
 }
