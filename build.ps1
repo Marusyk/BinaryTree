@@ -91,41 +91,41 @@ if($FoundDotNetCliVersion -ne $DotNetVersion) {
 # # INSTALL NUGET
 # ###########################################################################
 
-# # Make sure nuget.exe exists.
-# $NugetPath = Join-Path $ToolPath "nuget.exe"
-# if (!(Test-Path $NugetPath)) {
-#     Write-Host "Downloading NuGet.exe..."
-#     (New-Object System.Net.WebClient).DownloadFile($NugetUrl, $NugetPath);
-# }
+# Make sure nuget.exe exists.
+$NugetPath = Join-Path $ToolPath "nuget.exe"
+if (!(Test-Path $NugetPath)) {
+    Write-Host "Downloading NuGet.exe..."
+    (New-Object System.Net.WebClient).DownloadFile($NugetUrl, $NugetPath);
+}
 
 # ###########################################################################
 # # INSTALL CAKE
 # ###########################################################################
 
 # # Make sure Cake has been installed.
-# $CakePath = Join-Path $ToolPath "Cake.$CakeVersion/Cake.exe"
-# if (!(Test-Path $CakePath)) {
-#     Write-Host "Installing Cake..."
-#     Invoke-Expression "&`"$NugetPath`" install Cake -Version $CakeVersion -OutputDirectory `"$ToolPath`"" | Out-Null;
-#     if ($LASTEXITCODE -ne 0) {
-#         Throw "An error occured while restoring Cake from NuGet."
-#     }
-# }
+$CakePath = Join-Path $ToolPath "Cake.$CakeVersion/Cake.exe"
+if (!(Test-Path $CakePath)) {
+    Write-Host "Installing Cake..."
+    Invoke-Expression "&`"$NugetPath`" install Cake -Version $CakeVersion -OutputDirectory `"$ToolPath`"" | Out-Null;
+    if ($LASTEXITCODE -ne 0) {
+        Throw "An error occured while restoring Cake from NuGet."
+    }
+}
 
 # ###########################################################################
 # # RUN BUILD SCRIPT
 # ###########################################################################
 
 # # Build the argument list.
-# $Arguments = @{
-#     target=$Target;
-#     configuration=$Configuration;
-#     verbosity=$Verbosity;
-#     dryrun=$WhatIf;
-#     nugetapikey=$NugetApiKey;
-# }.GetEnumerator() | %{"--{0}=`"{1}`"" -f $_.key, $_.value };
+$Arguments = @{
+    target=$Target;
+    configuration=$Configuration;
+    verbosity=$Verbosity;
+    dryrun=$WhatIf;
+    nugetapikey=$NugetApiKey;
+}.GetEnumerator() | %{"--{0}=`"{1}`"" -f $_.key, $_.value };
 
 # # Start Cake
-# Write-Host "Running build script..."
-# Invoke-Expression "& `"$CakePath`" `"build.cake`" $Arguments $ScriptArgs"
-# exit $LASTEXITCODE
+Write-Host "Running build script..."
+Invoke-Expression "& `"$CakePath`" `"build.cake`" $Arguments $ScriptArgs"
+exit $LASTEXITCODE
