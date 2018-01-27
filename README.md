@@ -11,7 +11,7 @@ This little project contains a cross platform Binary Tree implementation
 
 # How to Install
 
-You can directly install this library from [Nuget][6]. There are two packages:
+You can directly install this library from [Nuget][6]. There is package:
 
 **[BinaryTree][7]**
 
