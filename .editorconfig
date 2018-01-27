@@ -1,0 +1,45 @@
+﻿root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_style = space
+indent_size = 2
+
+[*.sql]
+indent_size = 4
+
+[*.cs]
+indent_size = 4
+
+# Prefer "var"
+csharp_style_var_when_type_is_apparent = true : suggestion
+
+# Prefer method-like constructs to have a block body
+csharp_style_expression_bodied_methods = false : none
+
+# Prefer property-like constructs to have an expression-body
+csharp_style_expression_bodied_properties = true : none
+csharp_style_expression_bodied_accessors = true : none
+
+# Suggest more modern language features when available
+csharp_style_inlined_variable_declaration = true : suggestion
+csharp_style_throw_expression = true : suggestion
+
+# Newline settings
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+
+# Use language keywords instead of framework type names for type references
+dotnet_style_predefined_type_for_locals_parameters_members = true : suggestion
+
+# Suggest more modern language features when available
+dotnet_style_object_initializer = true : suggestion
+dotnet_style_collection_initializer = true : suggestion
+dotnet_style_coalesce_expression = true : suggestion
+dotnet_style_null_propagation = true : suggestion
+
+# Sort using and Import directives with System.* appearing first
+dotnet_sort_system_directives_first = false
