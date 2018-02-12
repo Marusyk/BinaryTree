@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -38,15 +38,12 @@ namespace BinaryTree
 
         public bool Contains(T value)
         {
-            BinaryTreeNode<T> parent;
-            return FindWithParent(value, out parent) != null;
+            return FindWithParent(value, out var _) != null;
         }
 
         public bool Remove(T value)
         {
-            BinaryTreeNode<T> parent;
-
-            var current = FindWithParent(value, out parent);
+            var current = FindWithParent(value, out var parent);
 
             if (current == null)
             {
