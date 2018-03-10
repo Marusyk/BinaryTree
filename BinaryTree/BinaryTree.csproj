@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>BinaryTree</AssemblyName>
@@ -7,7 +8,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>BinaryTree</RootNamespace>
-    <Version>5.0.0.0</Version>
+    <Version>5.1.0.0</Version>
     <Authors>RMarusyk</Authors>
     <Description>Simple Binary Tree implementation</Description>
     <PackageLicenseUrl>https://github.com/Marusyk/BinaryTree/blob/master/LICENSE</PackageLicenseUrl>
@@ -24,8 +25,9 @@ Supporting .Net Core 1.1
 v2.0.0 
 Implemented types of traversal strategy.
     </PackageReleaseNotes>
-    <AssemblyVersion>5.0.0.0</AssemblyVersion>
-    <FileVersion>5.0.0.0</FileVersion>
+    <AssemblyVersion>5.1.0.0</AssemblyVersion>
+    <FileVersion>5.1.0.0</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+
 </Project>

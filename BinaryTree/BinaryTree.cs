@@ -14,6 +14,12 @@ namespace BinaryTree
             SetTraversalStrategy(traversalStrategy);
         }
 
+        public BinaryTree(IEnumerable<T> collection)
+            : this()
+        {
+            AddRange(collection);
+        }
+
         public BinaryTree()
         {
             _traversalStrategy = new InOrderTraversal<T>();
@@ -34,6 +40,22 @@ namespace BinaryTree
                 AddTo(_head, value);
             }
             Count++;
+        }
+
+        public void AddRange(IEnumerable<T> collection)
+        {
+            if (collection == null)
+            {
+                throw new ArgumentNullException(nameof(collection));
+            }
+
+            using (IEnumerator<T> enumerator = collection.GetEnumerator())
+            {
+                while (enumerator.MoveNext())
+                {
+                    Add(enumerator.Current);
+                }
+            }
         }
 
         public bool Contains(T value)
@@ -90,7 +112,6 @@ namespace BinaryTree
                     {
                         parent.Right = current.Right;
                     }
-
                 }
             }
             else
@@ -146,7 +167,7 @@ namespace BinaryTree
 
         public void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)
         {
-            _traversalStrategy = traversalStrategy;
+            _traversalStrategy = traversalStrategy ?? throw new ArgumentNullException(nameof(traversalStrategy));
         }
 
         private static void AddTo(BinaryTreeNode<T> node, T value)
