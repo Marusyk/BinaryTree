@@ -36,8 +36,13 @@ binaryTree.Add(12)
 ```
 or use collection initializer like : `var binaryTree = new BinaryTree<int>() { 8, 5, 12, 3, 7, 10, 15 };`
 
+Another way is constructs a BinaryTree, copying the contents of the given collection
+```
+IList<int> numbers = new List<int>();
+var binaryTree = new BinaryTree<int>(numbers);
+```
 
-By default traversal is set to **In-order** <br>
+By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order) <br>
 You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
 or use method `SetTraversalStrategy()`:
 ```
@@ -51,6 +56,7 @@ binaryTree.SetTraversalStrategy(preOrder);
 Available operations:
 
  - `void Add(T value)` - adds a new element to the tree
+ - `void AddRange(IEnumerable<T> collection)` - copying the contents of the given collection to the tree
  - `int Count` - returns count of elements in tree
  - `bool IsReadOnly` - always return `false`
  - `bool Contains(T value)` - checks if the tree contains the element 
