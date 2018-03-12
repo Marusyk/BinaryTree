@@ -158,6 +158,26 @@ namespace BinaryTree
 
         public void CopyTo(T[] array, int arrayIndex)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            if (array.GetLowerBound(0) != 0)
+            {
+                throw new ArgumentException("Non zero lower bound");
+            }
+
+            if (arrayIndex < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            if (array.Length - arrayIndex < Count)
+            {
+                throw new ArgumentException();
+            }
+
             var items = _traversalStrategy.Traversal(_head);
             while (items.MoveNext())
             {
