@@ -20,6 +20,18 @@ namespace BinaryTree
             AddRange(collection);
         }
 
+        public BinaryTree(int capacity)
+            : this()
+        {
+            if (capacity <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Capacity should be more then zero.");
+            }
+
+            IsFixedSize = true;
+            Capacity = capacity;
+        }
+
         public BinaryTree()
         {
             _traversalStrategy = new InOrderTraversal<T>();
@@ -27,10 +39,19 @@ namespace BinaryTree
 
         public int Count { get; private set; }
 
+        public int Capacity { get; }
+
         public bool IsReadOnly => false;
+
+        public bool IsFixedSize { get; }
 
         public void Add(T value)
         {
+            if (IsFixedSize && Count >= Capacity)
+            {
+                throw new NotSupportedException($"The BinaryTree has a fixed size. Can not add more than {Capacity} items");
+            }
+
             if (_head == null)
             {
                 _head = new BinaryTreeNode<T>(value);
