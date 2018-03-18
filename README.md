@@ -42,6 +42,9 @@ IList<int> numbers = new List<int>();
 var binaryTree = new BinaryTree<int>(numbers);
 ```
 
+Also you can initialize a new instance of the BinaryTree class that is empty and has the specified initial capacity:
+`var binaryTree = new BinaryTree<int>(10);`
+
 By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order) <br>
 You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
 or use method `SetTraversalStrategy()`:
@@ -58,7 +61,9 @@ Available operations:
  - `void Add(T value)` - adds a new element to the tree
  - `void AddRange(IEnumerable<T> collection)` - copying the contents of the given collection to the tree
  - `int Count` - returns count of elements in tree
+ - `int Capacity` - gets the number of elements that the BinaryTree can contain
  - `bool IsReadOnly` - always return `false`
+ - `bool IsFixedSize` - gets a value indicating whether the BinaryTree has a fixed size
  - `bool Contains(T value)` - checks if the tree contains the element 
  - `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
  - `void Clear()` - clears tree
