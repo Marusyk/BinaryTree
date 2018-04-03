@@ -13,10 +13,9 @@ namespace BinaryTreeTest
             // Arrange
             var expected = new [] { 3, 5, 7, 8, 10, 12, 15 };
             var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-            var inOrderTraversalStrategy = new InOrderTraversal<int>();
 
             // Act
-            binaryTree.SetTraversalStrategy(inOrderTraversalStrategy);
+            binaryTree.TraversalStrategy = new InOrderTraversal<int>();
 
             // Assert
             Assert.IsTrue(expected.SequenceEqual(binaryTree));
@@ -28,10 +27,9 @@ namespace BinaryTreeTest
             // Arrange
             var expected = new [] { 8, 5, 3, 7, 12, 10, 15 };
             var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-            var preOrder = new PreOrderTraversal<int>();
 
             // Act
-            binaryTree.SetTraversalStrategy(preOrder);
+            binaryTree.TraversalStrategy = new PreOrderTraversal<int>();
 
             // Assert
             Assert.IsTrue(expected.SequenceEqual(binaryTree));
@@ -43,10 +41,9 @@ namespace BinaryTreeTest
             // Arrange
             var expected = new [] { 3, 7, 5, 10, 15, 12, 8 };
             var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
-            var postOrder = new PostOrderTraversal<int>();
 
             // Act
-            binaryTree.SetTraversalStrategy(postOrder);
+            binaryTree.TraversalStrategy = new PostOrderTraversal<int>();
 
             // Assert
             Assert.IsTrue(expected.SequenceEqual(binaryTree));
