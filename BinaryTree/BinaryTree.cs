@@ -11,17 +11,15 @@ namespace BinaryTree
 
         public BinaryTree(ITraversalStrategy<T> traversalStrategy)
         {
-            SetTraversalStrategy(traversalStrategy);
+            _traversalStrategy = traversalStrategy ?? throw new ArgumentNullException(nameof(traversalStrategy));
         }
 
         public BinaryTree(IEnumerable<T> collection)
-            : this()
         {
             AddRange(collection);
         }
 
         public BinaryTree(int capacity)
-            : this()
         {
             if (capacity <= 0)
             {
@@ -34,7 +32,12 @@ namespace BinaryTree
 
         public BinaryTree()
         {
-            _traversalStrategy = new InOrderTraversal<T>();
+        }
+
+        public ITraversalStrategy<T> TraversalStrategy
+        {
+            get => _traversalStrategy ?? (_traversalStrategy = new InOrderTraversal<T>());
+            set => _traversalStrategy = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         public int Count { get; private set; }
@@ -199,13 +202,14 @@ namespace BinaryTree
                 throw new ArgumentException();
             }
 
-            var items = _traversalStrategy.Traversal(_head);
+            var items = TraversalStrategy.Traversal(_head);
             while (items.MoveNext())
             {
                 array[arrayIndex++] = items.Current;
             }
         }
 
+        [Obsolete]
         public void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)
         {
             _traversalStrategy = traversalStrategy ?? throw new ArgumentNullException(nameof(traversalStrategy));
@@ -265,7 +269,7 @@ namespace BinaryTree
 
         public IEnumerator<T> GetEnumerator()
         {
-            return _traversalStrategy.Traversal(_head);
+            return TraversalStrategy.Traversal(_head);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

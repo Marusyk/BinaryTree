@@ -1,4 +1,4 @@
-﻿using BinaryTree;
+using BinaryTree;
 using System;
 
 namespace BinaryTreeConsole
@@ -9,22 +9,18 @@ namespace BinaryTreeConsole
         {
             var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
 
-            var inOrder = new InOrderTraversal<int>();
-            var preOrder = new PreOrderTraversal<int>();
-            var postOrder = new PostOrderTraversal<int>();
-
             Console.Write("Pre-order : ");
-            binaryTree.SetTraversalStrategy(preOrder);
+            binaryTree.TraversalStrategy = new PreOrderTraversal<int>();
             binaryTree.PrintToConsole();
 
             Console.WriteLine(Environment.NewLine);
             Console.Write("Post-order : ");
-            binaryTree.SetTraversalStrategy(postOrder);
+            binaryTree.TraversalStrategy = new PostOrderTraversal<int>();
             binaryTree.PrintToConsole();
 
             Console.WriteLine(Environment.NewLine);
             Console.Write("In-order : ");
-            binaryTree.SetTraversalStrategy(inOrder);
+            binaryTree.TraversalStrategy = new InOrderTraversal<int>();
             binaryTree.PrintToConsole();
 
             Console.WriteLine(Environment.NewLine);
