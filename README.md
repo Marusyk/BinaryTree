@@ -47,19 +47,20 @@ Also you can initialize a new instance of the BinaryTree class that is empty and
 
 By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order) <br>
 You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
-or use method `SetTraversalStrategy()`:
+or use property `TraversalStrategy`:
 ```
 var inOrder = new InOrderTraversal<int>();
 var preOrder = new PreOrderTraversal<int>();
 var postOrder = new PostOrderTraversal<int>();
 
-binaryTree.SetTraversalStrategy(preOrder);
+binaryTree.TraversalStrategy = preOrder;
 ```
 
 Available operations:
 
  - `void Add(T value)` - adds a new element to the tree
  - `void AddRange(IEnumerable<T> collection)` - copying the contents of the given collection to the tree
+ - `ITraversalStrategy<T> TraversalStrategy` -gets or sets type of traversal(Pre-order, In-order, Post-order)
  - `int Count` - returns count of elements in tree
  - `int Capacity` - gets the number of elements that the BinaryTree can contain
  - `bool IsReadOnly` - always return `false`
@@ -68,7 +69,6 @@ Available operations:
  - `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
  - `void Clear()` - clears tree
  - `void CopyTo(T[] array, int arrayIndex)` - copies all the elements of the tree to the specified one-dimensional array starting at the specified destination array index. 
- - `void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)` - sets type of traversal(Pre-order, In-order, Post-order)
  - `IEnumerator<T> GetEnumerator()` - returns numerator of tree
 
 To display all elements of tree, use:
