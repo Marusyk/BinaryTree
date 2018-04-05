@@ -82,10 +82,25 @@ Task("Build")
 
         var path = MakeAbsolute(new DirectoryPath(solutionFile));
         MSBuild(path.FullPath, buildSettings);
-    });    
+    });
+
+Task("Test")  
+    .IsDependentOn("Build")
+    .Does(() =>
+    {
+        var projects = GetFiles("./**/*Test.csproj");
+        foreach(var project in projects)
+        {
+            DotNetCoreTool(
+                projectPath: project.FullPath,
+                command: "xunit",
+                arguments: $"-configuration {configuration} -diagnostics -stoponfail"
+            );
+        }
+    });
 
 Task("Pack")
-    .IsDependentOn("Restore")
+    .IsDependentOn("Build")
     .WithCriteria(IsOnAppVeyorAndNotPR || !string.IsNullOrEmpty(nugetApiKey))
     .Does(() =>
     {
@@ -118,6 +133,7 @@ Task("Default")
     .IsDependentOn("Clean")
     .IsDependentOn("Restore")
     .IsDependentOn("Build")
+    .IsDependentOn("Test")
     .IsDependentOn("Pack")
     .IsDependentOn("Publish");
 
