@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace BinaryTree
@@ -8,7 +8,9 @@ namespace BinaryTree
         public IEnumerator<T> Traversal(BinaryTreeNode<T> node)
         {
             if (node == null)
+            {
                 yield break;
+            }
 
             var stack = new Stack<BinaryTreeNode<T>>();
             stack.Push(node);

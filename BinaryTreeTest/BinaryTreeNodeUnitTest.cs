@@ -1,12 +1,11 @@
 using BinaryTree;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace BinaryTreeTest
 {
-    [TestClass]
     public class BinaryTreeNodeUnitTest
     {
-        [TestMethod]
+        [Fact]
         public void TestNodeCompareShouldBeEqual()
         {
             // Arrange
@@ -17,10 +16,10 @@ namespace BinaryTreeTest
             var isEqual = nodeOrigin.CompareNode(nodeToCompare);
 
             // Assert
-            Assert.AreEqual(0, isEqual);
+            Assert.Equal(0, isEqual);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestNodeCompareShouldBeHigher()
         {
             // Arrange
@@ -31,10 +30,10 @@ namespace BinaryTreeTest
             var isHigher = nodeOrigin.CompareNode(nodeToCompare);
 
             // Assert
-            Assert.AreEqual(1, isHigher);
+            Assert.Equal(1, isHigher);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestNodeCompareShouldBeLower()
         {
             // Arrange
@@ -45,7 +44,7 @@ namespace BinaryTreeTest
             var isLower = nodeOrigin.CompareNode(nodeToCompare);
 
             // Assert
-            Assert.AreEqual(-1, isLower);
+            Assert.Equal(-1, isLower);
         }
     }
 }
