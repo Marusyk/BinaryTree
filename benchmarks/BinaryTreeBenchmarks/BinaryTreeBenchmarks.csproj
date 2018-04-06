@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BinaryTree\BinaryTree.csproj" />
+    <ProjectReference Include="..\..\src\BinaryTree\BinaryTree.csproj" />
   </ItemGroup>
 
 </Project>

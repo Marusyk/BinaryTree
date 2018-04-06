@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{A4E2691B-4AE8-45E9-8393-7080EF80AF86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "src\BinaryTree\BinaryTree.csproj", "{A4E2691B-4AE8-45E9-8393-7080EF80AF86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeConsole", "BinaryTreeConsole\BinaryTreeConsole.csproj", "{EFE14B3C-3C84-4B87-A189-50473E800906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeConsole", "samples\BinaryTreeConsole\BinaryTreeConsole.csproj", "{EFE14B3C-3C84-4B87-A189-50473E800906}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeTest", "BinaryTreeTest\BinaryTreeTest.csproj", "{84BC4D3A-CEE1-4301-BA90-ABA36BAC1861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeTest", "tests\BinaryTreeTest\BinaryTreeTest.csproj", "{84BC4D3A-CEE1-4301-BA90-ABA36BAC1861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTreeBenchmarks", "BinaryTreeBenchmarks\BinaryTreeBenchmarks.csproj", "{8FF2404B-53A3-4503-BA80-9948BE7A79BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeBenchmarks", "benchmarks\BinaryTreeBenchmarks\BinaryTreeBenchmarks.csproj", "{8FF2404B-53A3-4503-BA80-9948BE7A79BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{43C53C9B-E93B-4EFD-BD4C-F2BC8D2EA96A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E58CF340-0B26-4F50-9194-DCDDA0136FCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F523A4C0-6583-41E7-AE67-994A94AC250E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{AEE6033A-3468-4869-A6E8-B97C228F9B69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +44,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4E2691B-4AE8-45E9-8393-7080EF80AF86} = {43C53C9B-E93B-4EFD-BD4C-F2BC8D2EA96A}
+		{EFE14B3C-3C84-4B87-A189-50473E800906} = {E58CF340-0B26-4F50-9194-DCDDA0136FCB}
+		{84BC4D3A-CEE1-4301-BA90-ABA36BAC1861} = {F523A4C0-6583-41E7-AE67-994A94AC250E}
+		{8FF2404B-53A3-4503-BA80-9948BE7A79BC} = {AEE6033A-3468-4869-A6E8-B97C228F9B69}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83666AC3-2532-4CF1-A064-D967DFD7C5C9}
