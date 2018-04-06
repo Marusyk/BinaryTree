@@ -110,7 +110,7 @@ Task("Pack")
             OutputDirectory = artifactsDirectory
         };
 
-        var projects = GetFiles("./**/*.csproj");
+        var projects = GetFiles("./src/**/*.csproj");
         foreach(var project in projects)
         {
             DotNetCorePack(project.FullPath, settings);
