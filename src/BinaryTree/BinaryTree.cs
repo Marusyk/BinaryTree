@@ -7,6 +7,7 @@ namespace BinaryTree
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
         private ITraversalStrategy<T> _traversalStrategy;
+        private IBinaryTreePrinter<T> _treePrinter;
         private BinaryTreeNode<T> _head;
 
         public BinaryTree(ITraversalStrategy<T> traversalStrategy)
@@ -38,6 +39,12 @@ namespace BinaryTree
         {
             get => _traversalStrategy ?? (_traversalStrategy = new InOrderTraversal<T>());
             set => _traversalStrategy = value ?? throw new ArgumentNullException(nameof(value));
+        }
+
+        public IBinaryTreePrinter<T> BinaryTreePrinter
+        {
+            get => _treePrinter ?? (_treePrinter = new HorizontalTreePrinter<T>());
+            set => _treePrinter = value ?? throw new ArgumentNullException(nameof(value));
         }
 
         public int Count { get; private set; }
@@ -275,6 +282,11 @@ namespace BinaryTree
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void Print()
+        {
+            BinaryTreePrinter.Print(this._head);
         }
     }
 }

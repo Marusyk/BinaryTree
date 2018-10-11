@@ -24,6 +24,11 @@ namespace BinaryTreeConsole
             binaryTree.PrintToConsole();
 
             Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Pretty print: ");
+            Console.WriteLine(Environment.NewLine);
+            binaryTree.Print();
+
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine($"Count : {binaryTree.Count}");
 
             const int remove = 10;
