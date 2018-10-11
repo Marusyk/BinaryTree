@@ -29,7 +29,8 @@ You can directly install this library from [Nuget][6]. There is package:
 Create a new instanse:
 `var binaryTree = new BinaryTree<int>();`
 and add elements: 
-```
+
+```csharp
 binaryTree.Add(8);
 binaryTree.Add(5);
 binaryTree.Add(12)
@@ -37,7 +38,8 @@ binaryTree.Add(12)
 or use collection initializer like : `var binaryTree = new BinaryTree<int>() { 8, 5, 12, 3, 7, 10, 15 };`
 
 Another way is constructs a BinaryTree, copying the contents of the given collection
-```
+
+```csharp
 IList<int> numbers = new List<int>();
 var binaryTree = new BinaryTree<int>(numbers);
 ```
@@ -48,7 +50,8 @@ Also you can initialize a new instance of the BinaryTree class that is empty and
 By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order) <br>
 You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
 or use property `TraversalStrategy`:
-```
+
+```csharp
 var inOrder = new InOrderTraversal<int>();
 var preOrder = new PreOrderTraversal<int>();
 var postOrder = new PostOrderTraversal<int>();
@@ -72,11 +75,17 @@ Available operations:
  - `IEnumerator<T> GetEnumerator()` - returns numerator of tree
 
 To display all elements of tree, use:
-```
+
+```csharp
 foreach (var item in binaryTree)
 {
    Console.Write(item + " ");
 }
+```
+or use extension method:
+
+```csharp
+binaryTree.PrintToConsole();
 ```
 
  ## Contributing
