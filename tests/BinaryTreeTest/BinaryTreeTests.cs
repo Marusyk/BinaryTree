@@ -91,6 +91,7 @@ namespace BinaryTreeTest
             Assert.True(_sut.Count < initialCount);
         }
 
+
         [Fact]
         public void Remove_should_return_false_and_make_no_changes_to_tree_when_tree_does_not_contain_element_to_remove()
         {
@@ -117,6 +118,13 @@ namespace BinaryTreeTest
 
             // Assert
             Assert.Equal(isSuccess, exists);
+        }
+
+        [Fact]
+        public void Should_pretty_print_whithout_errors()
+        {
+            var binaryTree = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
+            binaryTree.PrettyPrint();
         }
     }
 }

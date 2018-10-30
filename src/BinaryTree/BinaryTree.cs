@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BinaryTree
 {
@@ -172,6 +173,28 @@ namespace BinaryTree
                 }
             }
             return true;
+        }
+
+        public void PrettyPrint()
+        {
+            //Generate lines for printing
+            var items = new T[Count];
+            CopyTo(items, 0);
+            var itemsList = items.ToList();
+
+            var printLines = new List<IEnumerable<T>>();
+            for (int i = 0; i < Count; i = i*2)
+                printLines.Add(items.Skip(i).Take(i * 2));
+
+            printLines.Reverse();
+            long count = 0;
+            foreach (var line in printLines)
+            {
+                var leading = string.Join("", Enumerable.Repeat(" ", (int)Math.Pow(2, count)));
+                var lnprint = string.Join(" ", line);
+                Console.WriteLine($"{leading}{lnprint}{leading}");
+                count++;
+            }
         }
 
         public void Clear()
