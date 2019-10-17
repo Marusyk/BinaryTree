@@ -7,7 +7,7 @@ namespace BinaryTree
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
         private ITraversalStrategy<T> _traversalStrategy;
-        private BinaryTreeNode<T> _head;
+        public BinaryTreeNode<T> _head;
 
         public BinaryTree(ITraversalStrategy<T> traversalStrategy)
         {
