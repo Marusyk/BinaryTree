@@ -11,8 +11,9 @@ This little project contains a cross platform Binary Tree implementation
  [![Travis build status](https://img.shields.io/travis/Marusyk/BinaryTree.svg?label=travis-ci&branch=master&style=flat-square&logo=travis)](https://travis-ci.org/Marusyk/BinaryTree)
  [![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v4.0.0.1)
  [![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
- [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)]()
- [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+ [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
+ [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/master/LICENSE) 
+ [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/master/CONTRIBUTING.md)
 
 # How to Install
 
