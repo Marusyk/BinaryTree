@@ -7,28 +7,28 @@ namespace BinaryTree
     {
         public static void PrintToConsole<T>(this IEnumerable<T> source)
         {
-            if (source is BinaryTree<int>)
+            foreach (var item in source)
             {
-                BinaryTree<int> binaryTree = (BinaryTree<int>)source;
-                binaryTree.Print();
+                Console.Write($"{item} ");
             }
-            else
-            {
-                foreach (var item in source)
-                {
-                    Console.Write($"{item} ");
-                }
-            }
-
-            
         }
 
-        public static void Print(this BinaryTree<int> root, string textFormat = "0", int spacing = 1, int topMargin = 2, int leftMargin = 2)
+        public static void PrintAsTree<T>(this IEnumerable<T> source)
+        {
+            if (source is BinaryTree<int> binaryTree)
+            {
+                binaryTree.Print();
+                return;
+            }
+            throw new NotSupportedException("Support only for numbers");
+        }
+
+        private static void Print(this BinaryTree<int> root, string textFormat = "0", int spacing = 1, int topMargin = 2, int leftMargin = 2)
         {
             if (root == null) return;
             int rootTop = Console.CursorTop + topMargin;
             var last = new List<NodeInfo>();
-            var next = root._head;
+            var next = root.Head;
             for (int level = 0; next != null; level++)
             {
                 var item = new NodeInfo { Node = next, Text = next.Value.ToString(textFormat) };
