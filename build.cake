@@ -88,15 +88,11 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var projects = GetFiles("./**/*Test.csproj");
-        foreach(var project in projects)
+        var projectFile = GetFiles("./**/BinaryTreeTest.csproj");
+        DotNetCoreTest(projectFile.First().FullPath, new DotNetCoreTestSettings()
         {
-            DotNetCoreTool(
-                projectPath: project.FullPath,
-                command: "xunit",
-                arguments: $"-configuration {configuration} -diagnostics -stoponfail"
-            );
-        }
+            Configuration = configuration
+        });
     });
 
 Task("Pack")
