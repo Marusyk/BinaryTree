@@ -8,7 +8,7 @@ C# Binary tree
 This little project contains a cross platform Binary Tree implementation
 
  [![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree) 
- [![Travis build status](https://img.shields.io/travis/Marusyk/BinaryTree.svg?label=travis-ci&branch=master&style=flat-square&logo=travis)](https://travis-ci.org/Marusyk/BinaryTree)
+ ![Ubuntu](https://github.com/Marusyk/BinaryTree/workflows/Build/badge.svg?branch=master)
  [![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
  [![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
  [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
