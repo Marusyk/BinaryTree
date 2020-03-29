@@ -97,7 +97,6 @@ Task("Test")
 
 Task("Pack")
     .IsDependentOn("Build")
-    .WithCriteria(IsOnAppVeyorAndNotPR || !string.IsNullOrEmpty(nugetApiKey))
     .Does(() =>
     {
         var settings = new DotNetCorePackSettings
