@@ -22,4 +22,12 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore
+    
+    - name: Cake Action
+      uses: ecampidoglio/cake-action@v1.1.1
+      with:
+        # The path of the Cake script to run.
+        script-path: build.cake
+        # The name of the task to execute. Note that this argument must be supported by the script.
+        target: Default
