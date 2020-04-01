@@ -8,8 +8,11 @@ C# Binary tree
 This little project contains a cross platform Binary Tree implementation
 
  [![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree) 
- ![Ubuntu](https://github.com/Marusyk/BinaryTree/workflows/Build/badge.svg?branch=master)
- [![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
+![Windows Build](https://github.com/Marusyk/BinaryTree/workflows/Windows%20Build/badge.svg)
+![MacOs Build](https://github.com/Marusyk/BinaryTree/workflows/MacOs%20Build/badge.svg)
+![Linux Build](https://github.com/Marusyk/BinaryTree/workflows/Linux%20Build/badge.svg)
+
+[![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
  [![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
  [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/master/LICENSE) 
