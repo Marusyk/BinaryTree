@@ -11,7 +11,7 @@
     <Version>5.2.0</Version>
     <Authors>RMarusyk</Authors>
     <Description>Simple Binary Tree implementation</Description>
-    <PackageLicenseUrl>https://github.com/Marusyk/BinaryTree/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/Marusyk/BinaryTree/blob/main/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Marusyk/BinaryTree</PackageProjectUrl>
     <PackageTags>binarytree</PackageTags>
