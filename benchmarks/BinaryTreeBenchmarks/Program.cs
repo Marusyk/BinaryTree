@@ -51,13 +51,13 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void NumbersInOrderTraversal()
+        public void NumbersInOrderTraversal()
         {
             _ = new BinaryTree<int>(Numbers);
         }
 
         [Benchmark]
-        public static void NumbersPreOrderTraversal()
+        public void NumbersPreOrderTraversal()
         {
             var preOrder = new PreOrderTraversal<int>();
             var binaryTree = new BinaryTree<int>(preOrder);
@@ -65,7 +65,7 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void NumbersPostOrderTraversal()
+        public void NumbersPostOrderTraversal()
         {
             var postOrder = new PostOrderTraversal<int>();
             var binaryTree = new BinaryTree<int>(postOrder);
@@ -73,13 +73,13 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void CharsInOrderTraversal()
+        public void CharsInOrderTraversal()
         {
             _ = new BinaryTree<char>(Chars);
         }
 
         [Benchmark]
-        public static void CharsPreOrderTraversal()
+        public void CharsPreOrderTraversal()
         {
             var preOrder = new PreOrderTraversal<char>();
             var binaryTree = new BinaryTree<char>(preOrder);
@@ -87,7 +87,7 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void CharsPostOrderTraversal()
+        public void CharsPostOrderTraversal()
         {
             var postOrder = new PostOrderTraversal<char>();
             var binaryTree = new BinaryTree<char>(postOrder);
@@ -95,13 +95,13 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void StringsInOrderTraversal()
+        public void StringsInOrderTraversal()
         {
             _ = new BinaryTree<string>(Strings);
         }
 
         [Benchmark]
-        public static void StringsPreOrderTraversal()
+        public void StringsPreOrderTraversal()
         {
             var preOrder = new PreOrderTraversal<string>();
             var binaryTree = new BinaryTree<string>(preOrder);
@@ -109,7 +109,7 @@ namespace BinaryTreeBenchmarks
         }
 
         [Benchmark]
-        public static void StringsPostOrderTraversal()
+        public void StringsPostOrderTraversal()
         {
             var postOrder = new PostOrderTraversal<string>();
             var binaryTree = new BinaryTree<string>(postOrder);
