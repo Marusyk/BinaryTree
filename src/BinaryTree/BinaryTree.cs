@@ -23,7 +23,7 @@ namespace BinaryTree
         {
             if (capacity <= 0)
             {
-                throw new ArgumentOutOfRangeException("Capacity should be more then zero.");
+                throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity should be more then zero.");
             }
 
             IsFixedSize = true;
