@@ -2,19 +2,23 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <AssemblyName>BinaryTree</AssemblyName>
     <PackageId>BinaryTree</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <RootNamespace>BinaryTree</RootNamespace>
-    <Version>5.2.0</Version>
     <Authors>RMarusyk</Authors>
     <Description>Simple Binary Tree implementation</Description>
-    <PackageLicenseUrl>https://github.com/Marusyk/BinaryTree/blob/main/LICENSE</PackageLicenseUrl>
+    <License>https://github.com/Marusyk/BinaryTree/blob/main/LICENSE</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Marusyk/BinaryTree</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Marusyk/BinaryTree</RepositoryUrl>
+    <RootNamespace>BinaryTree</RootNamespace>
     <PackageTags>binarytree</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>5.2.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <PackageReleaseNotes>
 v.5.2.0
 Sopporting .Net Standard 2.1
@@ -27,9 +31,6 @@ Supporting .Net Core 1.1
 v2.0.0 
 Implemented types of traversal strategy.
     </PackageReleaseNotes>
-    <AssemblyVersion>5.2.0.0</AssemblyVersion>
-    <FileVersion>5.2.0.0</FileVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>

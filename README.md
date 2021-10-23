@@ -7,16 +7,16 @@ C# Binary tree
 
 This little project contains a cross platform Binary Tree implementation
 
-![Windows Build](https://github.com/Marusyk/BinaryTree/workflows/Windows%20Build/badge.svg)
-![MacOs Build](https://github.com/Marusyk/BinaryTree/workflows/MacOs%20Build/badge.svg)
-![Linux Build](https://github.com/Marusyk/BinaryTree/workflows/Linux%20Build/badge.svg)
+[![Windows Build](https://github.com/Marusyk/BinaryTree/actions/workflows/Windows.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/Windows.yml)
+[![MacOs Build](https://github.com/Marusyk/BinaryTree/actions/workflows/MacOS.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/MacOS.yml)
+[![Linux Build](https://github.com/Marusyk/BinaryTree/actions/workflows/Linux.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/Linux.yml)
 
- [![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree) 
- [![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
- [![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
- [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
- [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) 
- [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree) 
+[![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
+[![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
+[![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md)
 
 # How to Install
 
