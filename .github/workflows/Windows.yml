@@ -1,6 +1,6 @@
 name: Windows Build
 
-on:
+on: 
   push:
     branches: [ main ]
   pull_request:
@@ -13,7 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Cake Action
       uses: cake-build/cake-action@v1.3.0
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       with:
-        target: Test
+        target: UploadTestReport

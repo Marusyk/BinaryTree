@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ" alt="HttpPatch" width="100"/>
 </p>
 
@@ -17,6 +17,11 @@ This little project contains a cross platform Binary Tree implementation
 [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md)
+
+# Code Coverage
+
+[![Coverage Status](https://coveralls.io/repos/github/Marusyk/BinaryTree/badge.svg)](https://coveralls.io/github/Marusyk/BinaryTree)
+</br>
 
 # How to Install
 
