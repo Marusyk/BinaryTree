@@ -20,7 +20,7 @@ This little project contains a cross platform Binary Tree implementation
 
 # Code Coverage
 
-[![Coverage Status](https://coveralls.io/repos/github/kanilZ/BinaryTree/badge.svg)](https://coveralls.io/github/kanilZ/BinaryTree)
+[![Coverage Status](https://coveralls.io/repos/github/Marusyk/BinaryTree/badge.svg)](https://coveralls.io/github/Marusyk/BinaryTree)
 </br>
 
 # How to Install
