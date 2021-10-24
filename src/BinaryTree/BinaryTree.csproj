@@ -7,7 +7,7 @@
     <Description>Simple Binary Tree implementation</Description>
     <License>https://github.com/Marusyk/BinaryTree/blob/main/LICENSE</License>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ</PackageIconUrl>
+    <PackageIcon>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ</PackageIcon>
     <PackageProjectUrl>https://github.com/Marusyk/BinaryTree</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Marusyk/BinaryTree</RepositoryUrl>
     <RootNamespace>BinaryTree</RootNamespace>
