@@ -7,13 +7,17 @@
     <Description>Simple Binary Tree implementation</Description>
     <License>https://github.com/Marusyk/BinaryTree/blob/main/LICENSE</License>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_N3p8bFpmy0AyoBl_3n3XwSVlnjfnPzLduqRlCI-sS19C810kSQ</PackageIcon>
+    <PackageIcon>BinaryTree.png</PackageIcon>
     <PackageProjectUrl>https://github.com/Marusyk/BinaryTree</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Marusyk/BinaryTree</RepositoryUrl>
     <RootNamespace>BinaryTree</RootNamespace>
     <PackageTags>binarytree</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="BinaryTreeImg\BinaryTree.png" Pack="true" Visible="false" PackagePath="\" />
+  </ItemGroup>
+  
   <PropertyGroup>
     <Version>5.2.0</Version>
   </PropertyGroup>
