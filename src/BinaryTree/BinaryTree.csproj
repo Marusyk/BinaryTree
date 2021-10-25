@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="BinaryTreeImg\BinaryTree.png" Pack="true" Visible="false" PackagePath="\" />
+    <None Include="..\..\BinaryTree.png" Pack="true" Visible="false" PackagePath="\" />
   </ItemGroup>
   
   <PropertyGroup>
