@@ -25,13 +25,11 @@ This little project contains a cross platform Binary Tree implementation
 
 # How to Install
 
-You can directly install this library from [Nuget][6]. There is package:
+You can directly install this library from [Nuget](http://nuget.org). There is package:
 
-**[BinaryTree][7]**
+**[BinaryTree](https://www.nuget.org/packages/BinaryTree)**
 
     PM> Install-Package BinaryTree
-[6]: http://nuget.org
-[7]: https://www.nuget.org/packages/BinaryTree
 
 # How to use
 
@@ -97,7 +95,7 @@ or use extension method:
 binaryTree.PrintToConsole();
 ```
 
- ## Contributing
+## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
