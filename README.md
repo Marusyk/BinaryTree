@@ -95,6 +95,20 @@ or use extension method:
 binaryTree.PrintToConsole();
 ```
 
+### Operations complexity
+#### Time complexity
+|Operation |Average  | Worst |
+|---|---|---|
+|Access|<span style="color: green">O(log(n) |<span style = "color: yellow">O(n)|
+|Search|<span style="color: green"> O(log(n)|<span style = "color: yellow">O(n)|
+|Insertion|<span style="color: green"> O(log(n)|<span style = "color: yellow">O(n)|
+|Deletion|<span style="color: green">O(log(n)|<span style = "color: yellow">O(n)|
+
+#### Space complexity
+| Worst |
+|---|
+|<span style = "color: yellow">O(n)|
+
 ## Build
 
 On Windows: 
