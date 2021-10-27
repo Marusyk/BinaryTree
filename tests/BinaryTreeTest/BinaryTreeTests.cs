@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using BinaryTree;
 using Xunit;
@@ -7,10 +9,11 @@ namespace BinaryTreeTest
     public class BinaryTreeTests
     {
         private readonly BinaryTree<int> _sut;
+        private readonly List<int> _testData = new List<int> { 8, 5, 12, 3, 7, 10, 15 };
 
         public BinaryTreeTests()
         {
-            _sut = new BinaryTree<int> { 8, 5, 12, 3, 7, 10, 15 };
+            _sut = new BinaryTree<int>(_testData);
         }
 
         [Fact]
@@ -20,10 +23,11 @@ namespace BinaryTreeTest
             var expected = new [] { 3, 5, 7, 8, 10, 12, 15 };
 
             // Act
-            _sut.TraversalStrategy = new InOrderTraversal<int>();
+            var sut = new BinaryTree<int>(new InOrderTraversal<int>());
+            sut.AddRange(_testData);
 
             // Assert
-            Assert.True(expected.SequenceEqual(_sut));
+            Assert.True(expected.SequenceEqual(sut));
         }
 
         [Fact]
@@ -43,13 +47,15 @@ namespace BinaryTreeTest
         public void PostOrderTraversal()
         {
             // Arrange
+            var sut = new BinaryTree<int>();
+            sut.AddRange(_testData);
             var expected = new [] { 3, 7, 5, 10, 15, 12, 8 };
 
             // Act
-            _sut.TraversalStrategy = new PostOrderTraversal<int>();
+            sut.SetTraversalStrategy(new PostOrderTraversal<int>());
 
             // Assert
-            Assert.True(expected.SequenceEqual(_sut));
+            Assert.True(expected.SequenceEqual(sut));
         }
 
         [Fact]
@@ -60,6 +66,7 @@ namespace BinaryTreeTest
             _sut.Clear();
 
             // Assert
+            Assert.Null(_sut.Head);
             Assert.Empty(_sut);
         }
 
@@ -76,19 +83,29 @@ namespace BinaryTreeTest
             Assert.Equal(_sut.Count, arr.Length);
         }
 
-        [Fact]
-        public void Remove_should_return_true_and_remove_element_from_tree_when_tree_contains_element_to_remove()
+        [Theory]
+        [InlineData(new int[] { 8, 5, 10, 3, 7, 12, 15, 4, 6, 55, 89, 99, 69 })]
+        [InlineData(new int[] { 8, 155, 10, 3, 7, 12, 15, 4, 6, 55, 89, 99, 69 })]
+        [InlineData(new int[] { 8, 5, 12, 3, 7, 10, 15 })]
+        [InlineData(new int[] { 10, 5, 15, 12, 11, 8, 99 })]
+        [InlineData(new int[] { 15, 10, 19, 14, 12 })]
+        [InlineData(new int[] { 7, 5, 10, 9, 15, 12 })]
+        [InlineData(new int[] { 10, 5, 12, 3, 7 })]
+        [InlineData(new int[] { 8, 10 })]
+        [InlineData(new int[] { 10, 8 })]
+        public void Remove_should_return_true_and_remove_element_from_tree_when_tree_contains_element_to_remove(int[] testData)
         {
             // Arrange
-            var initialCount = _sut.Count;
             const int remove = 10;
+            var sut = new BinaryTree<int>(testData);
+            var initialCount = sut.Count;
 
             // Act
-            var isRemoved = _sut.Remove(remove);
+            var isRemoved = sut.Remove(remove);
 
             // Assert
             Assert.True(isRemoved);
-            Assert.True(_sut.Count < initialCount);
+            Assert.True(sut.Count < initialCount);
         }
 
         [Fact]
@@ -117,6 +134,99 @@ namespace BinaryTreeTest
 
             // Assert
             Assert.Equal(isSuccess, exists);
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnReceivingNullData()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _sut.AddRange(null);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnInvalidCapacity()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                var sut = new BinaryTree<int>(-1);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnInvalidTraversalStrategy()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _sut.TraversalStrategy = null;
+            });
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _sut.SetTraversalStrategy(null);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnInvalidTraversalStrategy_WhileInitializing()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                new BinaryTree<int>(traversalStrategy: null);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnTryingToCopyToNullArray()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                _sut.CopyTo(null, 0);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnTryingToCopyWithNegativeIndex()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                _sut.CopyTo(new int[] { 1 }, -1);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnTryingToCopyToArrayWithInsufficientSpace()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                _sut.CopyTo(new int[_testData.Count], _testData.Count - 1);
+            });
+        }
+
+        [Fact]
+        public void ShouldThrowException_OnAddingToFixedCapacityTree()
+        {
+            var maxCapacity = 1;
+            var sut = new BinaryTree<int>(maxCapacity)
+            {
+                1
+            };
+
+            Assert.True(sut.IsFixedSize);
+            Assert.False(sut.IsReadOnly);
+            Assert.Equal(maxCapacity, sut.Capacity);
+            Assert.Single(sut);
+            Assert.Throws<NotSupportedException>(() =>
+            {
+                sut.Add(1);
+            });
+        }
+
+        [Fact]
+        public void PreOrderTraversal_NullNode()
+        {
+            var results = new PreOrderTraversal<int>().Traversal(null);
+            Assert.False(results.MoveNext());
         }
     }
 }
