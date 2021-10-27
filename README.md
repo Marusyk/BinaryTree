@@ -7,6 +7,21 @@ C# Binary tree
 
 This little project contains a cross platform Binary Tree implementation
 
+##Operations Complexity
+Binary tree includes the inserting, spacing, searching and deleting operations.
+
+###Time Complexity
+Time complexity is measuring in n. N is the number of nodes in the tree.
+####Searching
+For the best case is O(1) when element is the head node of the tree. For the average case is O(log n).  For the worst is O(n) when tree is unbalanced.
+####Inserting
+For the best case is O(1) when element is next to head node. For the worst is O(n) when tree is unbalanced.
+####Deleting
+For the best case is O(log n). For the worst is O(n) when tree is unbalanced.
+####Spacing
+The space complexity of a binary search tree is O(n) in both the average and the worst cases.
+<br>
+
 [![Windows Build](https://github.com/Marusyk/BinaryTree/actions/workflows/Windows.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/Windows.yml)
 [![MacOs Build](https://github.com/Marusyk/BinaryTree/actions/workflows/MacOS.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/MacOS.yml)
 [![Linux Build](https://github.com/Marusyk/BinaryTree/actions/workflows/Linux.yml/badge.svg?branch=main)](https://github.com/Marusyk/BinaryTree/actions/workflows/Linux.yml)
