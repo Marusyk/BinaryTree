@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="BinaryTree.png" alt="Grok" width="150"/>
+  <img src="BinaryTree.png" alt="BinaryTree" width="150"/>
 </p>
 
 # BinaryTree
@@ -94,6 +94,45 @@ or use extension method:
 ```csharp
 binaryTree.PrintToConsole();
 ```
+
+## Operations complexity
+<table>
+    <thead>
+        <tr>
+            <th colspan=8>Time Complexity</th>
+            <th>Space Complexity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan=4 align="center">Avarage</td>
+            <td colspan=4 align="center">Worst</td>
+            <td colspan=2 align="center">Worst</td>
+        </tr>
+        <tr>
+            <td align="center">Access</td>
+            <td align="center">Search</td>
+            <td align="center">Insertion</td>
+            <td align="center">Deletion</td>
+            <td align="center">Access</td>
+            <td align="center">Search</td>
+            <td align="center">Insertion</td>
+            <td align="center">Deletion</td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td>O(log(n))</td>
+            <td>O(log(n))</td>
+            <td>O(log(n))</td>
+            <td>O(log(n))</td>
+            <td align="center">O(n)</td>
+            <td align="center">O(n)</td>
+            <td align="center">O(n)</td>
+            <td align="center">O(n)</td>
+            <td align="center">O(n)</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Build
 
