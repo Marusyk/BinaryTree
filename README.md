@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="BinaryTree.png" alt="Grok" width="150"/>
+  <img src="BinaryTree.png" alt="BinaryTree" width="150"/>
 </p>
 
 # BinaryTree
@@ -21,7 +21,6 @@ This little project contains a cross platform Binary Tree implementation
 # Code Coverage
 
 [![Coverage Status](https://coveralls.io/repos/github/Marusyk/BinaryTree/badge.svg)](https://coveralls.io/github/Marusyk/BinaryTree)
-
 
 # How to Install
 
@@ -94,6 +93,41 @@ or use extension method:
 ```csharp
 binaryTree.PrintToConsole();
 ```
+
+## Operations complexity
+<table> 
+        <tr>
+            <td colspan=8>Time Complexity</td>
+            <td>Space Complexity</td>
+        </tr>  
+        <tr>
+            <td colspan=4>Avarage</td>
+            <td colspan=4 >Worst</td>
+            <td> Worst</td>
+        </tr>
+        <tr>
+            <td>Access</td>
+            <td>Search</td>
+            <td>Insertion</td>
+            <td>Deletion</td>
+            <td>Access</td>
+            <td>Search</td>
+            <td>Insertion</td>
+            <td>Deletion</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+        </tr>
+</table>
 
 ## Build
 
