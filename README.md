@@ -117,15 +117,15 @@ binaryTree.PrintToConsole();
             <td></td>
         </tr>
         <tr>
-            <td><code class="yellow-green">O(log(n))</code></td>
-            <td><code class="yellow-green">O(log(n))</code></td>
-            <td><code class="yellow-green">O(log(n))</code></td>
-            <td><code class="yellow-green">O(log(n))</code></td>
-            <td><code class="yellow">O(n)</code></td>
-            <td><code class="yellow">O(n)</code></td>
-            <td><code class="yellow">O(n)</code></td>
-            <td><code class="yellow">O(n)</code></td>
-            <td><code class="yellow">O(n)</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(log(n))</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
+            <td><code>O(n)</code></td>
         </tr>
 </table>
 
