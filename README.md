@@ -22,7 +22,6 @@ This little project contains a cross platform Binary Tree implementation
 
 [![Coverage Status](https://coveralls.io/repos/github/Marusyk/BinaryTree/badge.svg)](https://coveralls.io/github/Marusyk/BinaryTree)
 
-
 # How to Install
 
 You can directly install this library from [Nuget](http://nuget.org). There is package:
@@ -96,42 +95,38 @@ binaryTree.PrintToConsole();
 ```
 
 ## Operations complexity
-<table>
-    <thead>
+<table> 
         <tr>
-            <th colspan=8>Time Complexity</th>
-            <th>Space Complexity</th>
-        </tr>
-    </thead>
-    <tbody>
+            <td colspan=8>Time Complexity</td>
+            <td>Space Complexity</td>
+        </tr>  
         <tr>
-            <td colspan=4 align="center">Avarage</td>
-            <td colspan=4 align="center">Worst</td>
-            <td colspan=2 align="center">Worst</td>
+            <td colspan=4>Avarage</td>
+            <td colspan=4 >Worst</td>
+            <td> Worst</td>
         </tr>
         <tr>
-            <td align="center">Access</td>
-            <td align="center">Search</td>
-            <td align="center">Insertion</td>
-            <td align="center">Deletion</td>
-            <td align="center">Access</td>
-            <td align="center">Search</td>
-            <td align="center">Insertion</td>
-            <td align="center">Deletion</td>
-            <td ></td>
+            <td>Access</td>
+            <td>Search</td>
+            <td>Insertion</td>
+            <td>Deletion</td>
+            <td>Access</td>
+            <td>Search</td>
+            <td>Insertion</td>
+            <td>Deletion</td>
+            <td></td>
         </tr>
         <tr>
-            <td>O(log(n))</td>
-            <td>O(log(n))</td>
-            <td>O(log(n))</td>
-            <td>O(log(n))</td>
-            <td align="center">O(n)</td>
-            <td align="center">O(n)</td>
-            <td align="center">O(n)</td>
-            <td align="center">O(n)</td>
-            <td align="center">O(n)</td>
+            <td><code class="yellow-green">O(log(n))</code></td>
+            <td><code class="yellow-green">O(log(n))</code></td>
+            <td><code class="yellow-green">O(log(n))</code></td>
+            <td><code class="yellow-green">O(log(n))</code></td>
+            <td><code class="yellow">O(n)</code></td>
+            <td><code class="yellow">O(n)</code></td>
+            <td><code class="yellow">O(n)</code></td>
+            <td><code class="yellow">O(n)</code></td>
+            <td><code class="yellow">O(n)</code></td>
         </tr>
-    </tbody>
 </table>
 
 ## Build
@@ -153,3 +148,27 @@ Please read [CONTRIBUTING.md](https://github.com/Marusyk/BinaryTree/blob/main/CO
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) file for details
+
+<!-- Style for Operations complexity table -->
+<style>
+  table {
+    border-collapse: separate;
+    border: 1px;
+    border-color: grey;
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    text-align: center;
+  }
+  td {
+    border: 1px solid #000;
+  }
+  .yellow-green {
+      border: 1px solid #286500;
+      color: black;
+      background-color: #C8EA00;
+  }
+  .yellow {
+      border: 1px solid #6f6e00;
+      color: black;
+      background-color: yellow;
+  }
+</style>
