@@ -148,27 +148,3 @@ Please read [CONTRIBUTING.md](https://github.com/Marusyk/BinaryTree/blob/main/CO
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) file for details
-
-<!-- Style for Operations complexity table -->
-<style>
-  table {
-    border-collapse: separate;
-    border: 1px;
-    border-color: grey;
-    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
-    text-align: center;
-  }
-  td {
-    border: 1px solid #000;
-  }
-  .yellow-green {
-      border: 1px solid #286500;
-      color: black;
-      background-color: #C8EA00;
-  }
-  .yellow {
-      border: 1px solid #6f6e00;
-      color: black;
-      background-color: yellow;
-  }
-</style>
