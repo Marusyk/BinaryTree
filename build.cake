@@ -64,7 +64,6 @@ Task("UploadTestReport")
     .IsDependentOn("Test")
     .WithCriteria((context) => FileExists(testCoverageOutputFilePath))
     .WithCriteria(!string.IsNullOrWhiteSpace(coverallsRepoToken))
-    .WithCriteria((context) => !BuildSystem.IsLocalBuild)
     .Does(() =>
   {
       CoverallsIo(testCoverageOutputFilePath, new CoverallsIoSettings
