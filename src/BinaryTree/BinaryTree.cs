@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace BinaryTree
-{
+namespace BinaryTree {
     public class BinaryTree<T> : ICollection<T> where T : IComparable<T>
     {
         private ITraversalStrategy<T> _traversalStrategy;
