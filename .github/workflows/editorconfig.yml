@@ -1,0 +1,23 @@
+name: Code Style
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  codestyle:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Editorconfig
+      uses: zbeekman/EditorConfig-Action@master
+      env:
+        # Only lint files changed in the pull request.
+        ALWAYS_LINT_ALL_FILES: true
+        
+        # Automatic error fixing not yet supported by EditorConfig-Action.
+        # Forced off to avoid unintentionally enabling when upgrading to
+        # new version.
+        EC_FIX_ERROR: false
