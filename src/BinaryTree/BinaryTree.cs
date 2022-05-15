@@ -9,7 +9,7 @@ namespace BinaryTree
         private ITraversalStrategy<T> _traversalStrategy;
         private BinaryTreeNode<T> _head;
 
-        public BinaryTree(ITraversalStrategy<T> traversalStrategy)
+ public BinaryTree(ITraversalStrategy<T> traversalStrategy)
         {
             _traversalStrategy = traversalStrategy ?? throw new ArgumentNullException(nameof(traversalStrategy));
         }
