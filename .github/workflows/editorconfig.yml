@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Mark git checkout as safe
+      run: git config --global --add safe.directory /github/workspace
     - uses: actions/checkout@v3
     - name: Editorconfig
       uses: zbeekman/EditorConfig-Action@master
