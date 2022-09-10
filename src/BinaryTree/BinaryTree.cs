@@ -86,12 +86,12 @@ namespace BinaryTree
 
         public bool Contains(T value)
         {
-            return FindWithParent(value, out var _) != null;
+            return FindWithParent(value, out BinaryTreeNode<T> _) != null;
         }
 
         public bool Remove(T value)
         {
-            var current = FindWithParent(value, out var parent);
+            BinaryTreeNode<T> current = FindWithParent(value, out BinaryTreeNode<T> parent);
 
             if (current == null)
             {
@@ -108,7 +108,7 @@ namespace BinaryTree
                 }
                 else
                 {
-                    var result = parent.CompareTo(current.Value);
+                    int result = parent.CompareTo(current.Value);
                     if (result > 0)
                     {
                         parent.Left = current.Left;
@@ -129,7 +129,7 @@ namespace BinaryTree
                 }
                 else
                 {
-                    var result = parent.CompareTo(current.Value);
+                    int result = parent.CompareTo(current.Value);
                     if (result > 0)
                     {
                         parent.Left = current.Right;
@@ -142,8 +142,8 @@ namespace BinaryTree
             }
             else
             {
-                var leftMost = current.Right.Left;
-                var leftMostParent = current.Right;
+                BinaryTreeNode<T> leftMost = current.Right.Left;
+                BinaryTreeNode<T> leftMostParent = current.Right;
 
                 while (leftMost.Left != null)
                 {
@@ -161,7 +161,7 @@ namespace BinaryTree
                 }
                 else
                 {
-                    var result = parent.CompareTo(current.Value);
+                    int result = parent.CompareTo(current.Value);
 
                     if (result > 0)
                     {
@@ -204,17 +204,11 @@ namespace BinaryTree
                 throw new ArgumentException();
             }
 
-            var items = TraversalStrategy.Traversal(_head);
+            IEnumerator<T> items = TraversalStrategy.Traversal(_head);
             while (items.MoveNext())
             {
                 array[arrayIndex++] = items.Current;
             }
-        }
-
-        [Obsolete]
-        public void SetTraversalStrategy(ITraversalStrategy<T> traversalStrategy)
-        {
-            _traversalStrategy = traversalStrategy ?? throw new ArgumentNullException(nameof(traversalStrategy));
         }
 
         private static void AddTo(BinaryTreeNode<T> node, T value)
@@ -245,12 +239,12 @@ namespace BinaryTree
 
         private BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent)
         {
-            var current = _head;
+            BinaryTreeNode<T> current = _head;
             parent = null;
 
             while (current != null)
             {
-                var result = current.CompareTo(value);
+                int result = current.CompareTo(value);
                 if (result > 0)
                 {
                     parent = current;

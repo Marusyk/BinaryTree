@@ -3,7 +3,8 @@
 </p>
 
 # BinaryTree
-C# Binary tree 
+
+C# Binary tree
 
 This project contains a cross platform Binary Tree implementation
 
@@ -14,7 +15,6 @@ This project contains a cross platform Binary Tree implementation
 [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md)
-
 
 # Code Coverage
 
@@ -32,13 +32,14 @@ You can directly install this library from [Nuget](http://nuget.org). There is p
 
 Create a new instanse:
 `var binaryTree = new BinaryTree<int>();`
-and add elements: 
+and add elements:
 
-```csharp
+``` csharp
 binaryTree.Add(8);
 binaryTree.Add(5);
 binaryTree.Add(12)
 ```
+
 or use collection initializer like : `var binaryTree = new BinaryTree<int>() { 8, 5, 12, 3, 7, 10, 15 };`
 
 Another way is constructs a BinaryTree, copying the contents of the given collection
@@ -51,7 +52,8 @@ var binaryTree = new BinaryTree<int>(numbers);
 Also you can initialize a new instance of the BinaryTree class that is empty and has the specified initial capacity:
 `var binaryTree = new BinaryTree<int>(10);`
 
-By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order) <br>
+By default traversal is set to [**In-order**](https://en.wikipedia.org/wiki/Tree_traversal#In-order)
+
 You can set the type of traversal in constructor `var binaryTree = new BinaryTree<int>(new PostOrderTraversal<int>());`
 or use property `TraversalStrategy`:
 
@@ -65,18 +67,18 @@ binaryTree.TraversalStrategy = preOrder;
 
 Available operations:
 
- - `void Add(T value)` - adds a new element to the tree
- - `void AddRange(IEnumerable<T> collection)` - copying the contents of the given collection to the tree
- - `ITraversalStrategy<T> TraversalStrategy` -gets or sets type of traversal(Pre-order, In-order, Post-order)
- - `int Count` - returns count of elements in tree
- - `int Capacity` - gets the number of elements that the BinaryTree can contain
- - `bool IsReadOnly` - always return `false`
- - `bool IsFixedSize` - gets a value indicating whether the BinaryTree has a fixed size
- - `bool Contains(T value)` - checks if the tree contains the element 
- - `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
- - `void Clear()` - clears tree
- - `void CopyTo(T[] array, int arrayIndex)` - copies all the elements of the tree to the specified one-dimensional array starting at the specified destination array index. 
- - `IEnumerator<T> GetEnumerator()` - returns numerator of tree
+- `void Add(T value)` - adds a new element to the tree
+- `void AddRange(IEnumerable<T> collection)` - copying the contents of the given collection to the tree
+- `ITraversalStrategy<T> TraversalStrategy` -gets or sets type of traversal(Pre-order, In-order, Post-order)
+- `int Count` - returns count of elements in tree
+- `int Capacity` - gets the number of elements that the BinaryTree can contain
+- `bool IsReadOnly` - always return `false`
+- `bool IsFixedSize` - gets a value indicating whether the BinaryTree has a fixed size
+- `bool Contains(T value)` - checks if the tree contains the element
+- `bool Remove(T value)` - remove element from the tree. Returns `true` if element was removed.
+- `void Clear()` - clears tree
+- `void CopyTo(T[] array, int arrayIndex)` - copies all the elements of the tree to the specified one-dimensional array starting at the specified destination array index.
+- `IEnumerator<T> GetEnumerator()` - returns numerator of tree
 
 To display all elements of tree, use:
 
@@ -86,6 +88,7 @@ foreach (var item in binaryTree)
    Console.Write(item + " ");
 }
 ```
+
 or use extension method:
 
 ```csharp
@@ -129,12 +132,14 @@ binaryTree.PrintToConsole();
 
 ## Build
 
-On Windows: 
-```powershell
+On Windows:
+
+```powershel
 build.ps1
 ```
 
 On Linux/Mac:
+
 ```bash
 build.sh
 ```

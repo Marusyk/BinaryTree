@@ -7,7 +7,7 @@ namespace BinaryTree
     {
         public static void PrintToConsole<T>(this IEnumerable<T> source)
         {
-            foreach (var item in source)
+            foreach (T item in source)
             {
                 Console.Write($"{item} ");
             }
@@ -25,10 +25,14 @@ namespace BinaryTree
 
         private static void Print(this BinaryTree<int> root, string textFormat = "0", int spacing = 1, int topMargin = 2, int leftMargin = 2)
         {
-            if (root == null) return;
+            if (root == null)
+            {
+                return;
+            }
+
             int rootTop = Console.CursorTop + topMargin;
             var last = new List<NodeInfo>();
-            var next = root.Head;
+            BinaryTreeNode<int> next = root.Head;
             for (int level = 0; next != null; level++)
             {
                 var item = new NodeInfo { Node = next, Text = next.Value.ToString(textFormat) };
@@ -63,13 +67,17 @@ namespace BinaryTree
                     Print(item.Text, top, item.StartPos);
                     if (item.Left != null)
                     {
-                        Print("/", top + 1, item.Left.EndPos);                      
+                        Print("/", top + 1, item.Left.EndPos);
                     }
                     if (item.Right != null)
-                    {                        
+                    {
                         Print("\\", top + 1, item.Right.StartPos - 1);
                     }
-                    if (--level < 0) break;
+                    if (--level < 0)
+                    {
+                        break;
+                    }
+
                     if (item == item.Parent.Left)
                     {
                         item.Parent.StartPos = item.EndPos + 1;
@@ -78,9 +86,13 @@ namespace BinaryTree
                     else
                     {
                         if (item.Parent.Left == null)
+                        {
                             item.Parent.EndPos = item.StartPos - 1;
+                        }
                         else
+                        {
                             item.Parent.StartPos += (item.StartPos - 1 - item.Parent.EndPos) / 2;
+                        }
                     }
                 }
             }
@@ -90,10 +102,18 @@ namespace BinaryTree
         private static void Print(string s, int top, int left, int right = -1)
         {
             Console.SetCursorPosition(left, top);
-            if (right < 0) right = left + s.Length;
-            while (Console.CursorLeft < right) Console.Write(s);
+            if (right < 0)
+            {
+                right = left + s.Length;
+            }
+
+            while (Console.CursorLeft < right)
+            {
+                Console.Write(s);
+            }
         }
     }
+
     class NodeInfo
     {
         public BinaryTreeNode<int> Node;

@@ -9,7 +9,7 @@ namespace BinaryTreeTest
     public class BinaryTreeTests
     {
         private readonly BinaryTree<int> _sut;
-        private readonly List<int> _testData = new List<int> { 8, 5, 12, 3, 7, 10, 15 };
+        private readonly List<int> _testData = new() { 8, 5, 12, 3, 7, 10, 15 };
 
         public BinaryTreeTests()
         {
@@ -20,7 +20,7 @@ namespace BinaryTreeTest
         public void InOrderTraversal()
         {
             // Arrange
-            var expected = new [] { 3, 5, 7, 8, 10, 12, 15 };
+            int[] expected = new [] { 3, 5, 7, 8, 10, 12, 15 };
 
             // Act
             var sut = new BinaryTree<int>(new InOrderTraversal<int>());
@@ -34,7 +34,7 @@ namespace BinaryTreeTest
         public void PreOrderTraversal()
         {
             // Arrange
-            var expected = new [] { 8, 5, 3, 7, 12, 10, 15 };
+            int[] expected = new [] { 8, 5, 3, 7, 12, 10, 15 };
 
             // Act
             _sut.TraversalStrategy = new PreOrderTraversal<int>();
@@ -49,10 +49,10 @@ namespace BinaryTreeTest
             // Arrange
             var sut = new BinaryTree<int>();
             sut.AddRange(_testData);
-            var expected = new [] { 3, 7, 5, 10, 15, 12, 8 };
+            int[] expected = new [] { 3, 7, 5, 10, 15, 12, 8 };
 
             // Act
-            sut.SetTraversalStrategy(new PostOrderTraversal<int>());
+            sut.TraversalStrategy = new PostOrderTraversal<int>();
 
             // Assert
             Assert.True(expected.SequenceEqual(sut));
@@ -74,7 +74,7 @@ namespace BinaryTreeTest
         public void Should_be_copy_to_array()
         {
             // Arrange
-            var arr = new int[_sut.Count];
+            int[] arr = new int[_sut.Count];
 
             // Act
             _sut.CopyTo(arr, 0);
@@ -98,10 +98,10 @@ namespace BinaryTreeTest
             // Arrange
             const int remove = 10;
             var sut = new BinaryTree<int>(testData);
-            var initialCount = sut.Count;
+            int initialCount = sut.Count;
 
             // Act
-            var isRemoved = sut.Remove(remove);
+            bool isRemoved = sut.Remove(remove);
 
             // Assert
             Assert.True(isRemoved);
@@ -112,11 +112,11 @@ namespace BinaryTreeTest
         public void Remove_should_return_false_and_make_no_changes_to_tree_when_tree_does_not_contain_element_to_remove()
         {
             // Arrange
-            var initialCount = _sut.Count;
+            int initialCount = _sut.Count;
             const int remove = 404;
 
-            // Act            
-            var isRemoved = _sut.Remove(remove);
+            // Act
+            bool isRemoved = _sut.Remove(remove);
 
             // Assert
             Assert.False(isRemoved);
@@ -130,7 +130,7 @@ namespace BinaryTreeTest
         {
             // Arrange
             // Act
-            var exists = _sut.Contains(element);
+            bool exists = _sut.Contains(element);
 
             // Assert
             Assert.Equal(isSuccess, exists);
@@ -163,7 +163,7 @@ namespace BinaryTreeTest
             });
             Assert.Throws<ArgumentNullException>(() =>
             {
-                _sut.SetTraversalStrategy(null);
+                _sut.TraversalStrategy = null;
             });
         }
 
@@ -206,7 +206,7 @@ namespace BinaryTreeTest
         [Fact]
         public void ShouldThrowException_OnAddingToFixedCapacityTree()
         {
-            var maxCapacity = 1;
+            int maxCapacity = 1;
             var sut = new BinaryTree<int>(maxCapacity)
             {
                 1
@@ -225,7 +225,7 @@ namespace BinaryTreeTest
         [Fact]
         public void PreOrderTraversal_NullNode()
         {
-            var results = new PreOrderTraversal<int>().Traversal(null);
+            IEnumerator<int> results = new PreOrderTraversal<int>().Traversal(null);
             Assert.False(results.MoveNext());
         }
     }

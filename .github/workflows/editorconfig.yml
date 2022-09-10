@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    
+
     - name: Configure safe.directory  # Workaround permission issue
       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
@@ -23,8 +23,8 @@ jobs:
       uses: FarzamMohammadi/EditorConfig-Action@master
       env:
         # Only lint files changed in the pull request.
-        ALWAYS_LINT_ALL_FILES: true
-        
+        ALWAYS_LINT_ALL_FILES: false
+
         # Automatic error fixing not yet supported by EditorConfig-Action.
         # Forced off to avoid unintentionally enabling when upgrading to
         # new version.

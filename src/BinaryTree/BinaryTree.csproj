@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackageId>BinaryTree</PackageId>
     <Authors>RMarusyk</Authors>
     <Description>Simple Binary Tree implementation</Description>
@@ -13,6 +13,10 @@
     <RootNamespace>BinaryTree</RootNamespace>
     <PackageTags>binarytree</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BinaryTree.cs~RF87697193.TMP" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\BinaryTree.png" Pack="true" Visible="false" PackagePath="\" />

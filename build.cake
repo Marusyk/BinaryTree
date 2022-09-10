@@ -33,12 +33,12 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-       DotNetCoreBuild(projectFile, new DotNetCoreBuildSettings
-       { 
-           Configuration = configuration,
-           NoRestore = true,
-           NoLogo = true
-       });  
+        DotNetCoreBuild(projectFile, new DotNetCoreBuildSettings
+        {
+            Configuration = configuration,
+            NoRestore = true,
+            NoLogo = true
+        });
     });
 
 Task("Test")  
@@ -59,7 +59,7 @@ Task("Test")
                 CoverletOutputName = testCoverageOutputFilePath.GetFilename().ToString()
             });
     });
-    
+
 Task("UploadTestReport")
     .IsDependentOn("Test")
     .WithCriteria((context) => FileExists(testCoverageOutputFilePath))

@@ -22,7 +22,7 @@ jobs:
       uses: cake-build/cake-action@v1.4.0
       with:
         target: Test
-  
+
   build-macos:
     runs-on: macos-latest
     steps:
