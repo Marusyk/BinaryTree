@@ -26,14 +26,14 @@ Task("Restore")
     .IsDependentOn("Clean")
     .Does(() =>
     {
-        DotNetCoreRestore(projectFile);
+        DotNetRestore(projectFile);
     });
 
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        DotNetCoreBuild(projectFile, new DotNetCoreBuildSettings
+        DotNetBuild(projectFile, new DotNetCoreBuildSettings
         {
             Configuration = configuration,
             NoRestore = true,
@@ -41,7 +41,7 @@ Task("Build")
         });
     });
 
-Task("Test")  
+Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
@@ -77,7 +77,7 @@ Task("NuGetPack")
     .IsDependentOn("UploadTestReport")
     .Does(() =>
     {
-        DotNetCorePack(projectFile, new DotNetCorePackSettings
+        DotNetPack(projectFile, new DotNetCorePackSettings
         {
             Configuration = configuration,
             NoRestore = true,
@@ -93,7 +93,7 @@ Task("NuGetPush")
     .WithCriteria(!string.IsNullOrWhiteSpace(nugetApiKey))
     .Does(() =>
     {
-        DotNetCoreNuGetPush(artifactsDirectory.CombineWithFilePath("*.nupkg").FullPath, new DotNetCoreNuGetPushSettings
+        DotNetNuGetPush(artifactsDirectory.CombineWithFilePath("*.nupkg").FullPath, new DotNetCoreNuGetPushSettings
         {
             Source = nugetApiUrl,
             ApiKey = nugetApiKey

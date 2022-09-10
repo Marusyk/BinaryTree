@@ -9,11 +9,11 @@ C# Binary tree
 This project contains a cross platform Binary Tree implementation
 
 [![Build](https://github.com/Marusyk/BinaryTree/actions/workflows/builds.yml/badge.svg)](https://github.com/Marusyk/BinaryTree/actions/workflows/builds.yml)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree) 
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/l3kmfu18f4fbmuvu?svg=true)](https://ci.appveyor.com/project/Marusyk/binarytree)
 [![GitHub release](https://badge.fury.io/gh/Marusyk%2FBinaryTree.svg)](https://github.com/Marusyk/BinaryTree/releases/tag/v5.2.0)
 [![NuGet package](https://badge.fury.io/nu/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
 [![NuGet](https://img.shields.io/nuget/dt/BinaryTree.svg)](https://www.nuget.org/packages/BinaryTree/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE) 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Marusyk/BinaryTree/blob/main/LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Marusyk/BinaryTree/blob/main/CONTRIBUTING.md)
 
 # Code Coverage
@@ -85,7 +85,7 @@ To display all elements of tree, use:
 ```csharp
 foreach (var item in binaryTree)
 {
-   Console.Write(item + " ");
+    Console.Write(item + " ");
 }
 ```
 
@@ -96,11 +96,11 @@ binaryTree.PrintToConsole();
 ```
 
 ## Operations complexity
-<table> 
+<table>
         <tr>
             <td colspan=8>Time Complexity</td>
             <td>Space Complexity</td>
-        </tr>  
+        </tr>
         <tr>
             <td colspan=4>Avarage</td>
             <td colspan=4 >Worst</td>
